@@ -2502,6 +2502,7 @@
     let head;
 
     function headLoaded() {
+      head.speakText('Now that we have set up the basic project structure, we need a way to run the project locally and access it through a web browser. Installation and local development can be accomplished with npm and a build tool, or by importing three.js from a CDN. Both options are explained in the sections below.')
 
       // Populate emoji tester
       const elEmojis = d3.select("#emojis");
@@ -2834,8 +2835,8 @@
       // Create the talking head avatar
       const nodeAvatar = document.getElementById('avatar');
       head = new TalkingHead(nodeAvatar, {
-        jwtGet: jwtGet,
-        ttsEndpoint: googleTTSProxy,
+        ttsEndpoint: "https://eu-texttospeech.googleapis.com/v1beta1/text:synthesize",
+        ttsApikey: "put-your-own-Google-TTS-API-key-here", // <- Change this
         cameraZoomEnable: true,
         cameraPanEnable: true,
         cameraView: 'full',
