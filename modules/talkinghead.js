@@ -1884,7 +1884,7 @@ class TalkingHead {
   */
   lipsyncGetProcessor(lang, path="./") {
     if ( !this.lipsync.hasOwnProperty(lang) ) {
-      const moduleName = path + 'lipsync-' + lang.toLowerCase() + '.mjs';
+      const moduleName = path + 'lipsync-' + lang.toLowerCase() + '.js';
       const className = 'Lipsync' + lang.charAt(0).toUpperCase() + lang.slice(1);
       import(moduleName).then( module => {
         this.lipsync[lang] = new module[className];
