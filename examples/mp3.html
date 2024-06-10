@@ -93,7 +93,7 @@
           method: "POST",
           body: form,
           headers: {
-            "Authorization": "Bearer <add-your-openai-api-key-here>" // <- Change this
+            "Authorization": `Bearer ${import.meta.env.VITE_OPEN_AI_KEY}` // <- Change this
           }
         });
 
